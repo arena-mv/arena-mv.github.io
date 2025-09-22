@@ -1,0 +1,729 @@
+/*--------------------------------------------------------------
+# Header & Logo
+--------------------------------------------------------------*/
+.header .logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+@media (max-width: 992px) {
+  .header .logo img {
+    max-height: 50px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 150px 0;
+}
+
+.hero.section .container {
+  width: 100%;
+}
+
+.hero.section .content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero.section .content .lead {
+  font-size: 1.25rem;
+  max-width: 600px;
+}
+
+@media (max-width: 992px) {
+  .hero.section {
+    min-height: 100vh;
+  }
+  
+  .hero.section .content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero.section .content h1 {
+    font-size: 2rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Conditions Section
+--------------------------------------------------------------*/
+.conditions .conditions-card {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.conditions .condition-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.conditions .condition-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.conditions .condition-item p {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Popular Packages Section
+--------------------------------------------------------------*/
+.popular-packages .package-card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.popular-packages .package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.popular-packages .package-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.popular-packages .package-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.popular-packages .package-overlay .badge {
+  display: inline-block;
+  padding: 6px 15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.popular-packages .package-overlay .badge.featured {
+  background-color: #000000;
+}
+
+.popular-packages .package-content {
+  padding: 25px;
+}
+
+.popular-packages .package-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.popular-packages .package-content p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.popular-packages .package-features {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.popular-packages .feature-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.popular-packages .feature-tag i {
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.popular-packages .package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.popular-packages .max-depth {
+  font-size: 13px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.popular-packages .book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-color);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.popular-packages .book-btn:hover {
+  transform: translateX(5px);
+}
+
+/*--------------------------------------------------------------
+# Dive Sites Section
+--------------------------------------------------------------*/
+.dive-sites .site-card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.dive-sites .site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.dive-sites .site-image {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.dive-sites .site-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.dive-sites .site-overlay .badge {
+  display: inline-block;
+  padding: 6px 15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.dive-sites .site-overlay .badge.featured {
+  background-color: #000000;
+}
+
+.dive-sites .site-content {
+  padding: 20px;
+}
+
+.dive-sites .site-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dive-sites .site-content p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.dive-sites .site-features {
+  display: flex;
+  gap: 15px;
+}
+
+.dive-sites .feature-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.dive-sites .feature-tag i {
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Trust Section
+--------------------------------------------------------------*/
+.trust .trust-content {
+  padding-right: 30px;
+}
+
+.trust .trust-badges {
+  margin-top: 40px;
+}
+
+.trust .badge-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.trust .badge-icon {
+  width: 60px;
+  height: 60px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.trust .badge-icon i {
+  font-size: 28px;
+  color: var(--accent-color);
+}
+
+.trust .badge-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.trust .badge-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin: 0;
+}
+
+.trust .equipment-brands {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.trust .equipment-brands h4 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.trust .brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.trust .brand-item {
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Global Card Styles
+--------------------------------------------------------------*/
+.package-card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+  padding: 25px;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.package-card .package-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  margin: -25px -25px 20px -25px;
+}
+
+.package-card .package-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+.package-card .package-overlay .badge {
+  display: inline-block;
+  padding: 6px 15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.package-card .package-overlay .badge.featured {
+  background-color: #000000;
+}
+
+.package-card .package-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.package-card .package-content p {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.package-card .package-features {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.package-card .feature-tag {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.package-card .feature-tag i {
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.package-card .package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.package-card .max-depth {
+  font-size: 13px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.package-card .book-btn,
+.package-card .rent-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-color);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.package-card .book-btn:hover,
+.package-card .rent-btn:hover {
+  transform: translateX(5px);
+}
+
+/*--------------------------------------------------------------
+# CTA Sections
+--------------------------------------------------------------*/
+.courses-cta {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 50px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 15px;
+}
+
+.excursions-cta,
+.equipment-cta {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 50px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 15px;
+}
+
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+.gallery .gallery-slider {
+  padding-bottom: 50px;
+}
+
+.gallery .gallery-item {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.gallery .gallery-img {
+  height: 350px;
+  position: relative;
+}
+
+.gallery .gallery-caption {
+  padding: 20px;
+}
+
+.gallery .gallery-caption h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.gallery .gallery-caption p {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin: 0;
+}
+
+.gallery .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  opacity: 0.5;
+}
+
+.gallery .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.gallery .swiper-button-next,
+.gallery .swiper-button-prev {
+  color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery .swiper-button-next:after,
+.gallery .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.gallery .swiper-button-next:hover,
+.gallery .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Social Proof Section
+--------------------------------------------------------------*/
+.social-proof .reviews-container {
+  margin-bottom: 40px;
+}
+
+.social-proof .review-card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.social-proof .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.social-proof .reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-proof .reviewer-img {
+  width: 50px;
+  height: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+}
+
+.social-proof .reviewer-img i {
+  font-size: 1.5rem;
+}
+
+.social-proof .reviewer-info h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.social-proof .stars {
+  display: flex;
+  gap: 2px;
+}
+
+.social-proof .stars i {
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.social-proof .review-date {
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.social-proof .review-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  margin: 0;
+  font-style: italic;
+}
+
+.social-proof .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-proof .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.social-proof .social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+}
+
+.social-proof .gallery-container {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.social-proof .gallery-container h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.social-proof .mini-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.social-proof .gallery-item .placeholder-image {
+  min-height: 120px;
+  border-radius: 8px;
+}
+
+.social-proof .whatsapp-contact {
+  margin-top: 60px;
+}
+
+.social-proof .contact-card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #25D366; /* WhatsApp green */
+}
+
+.social-proof .contact-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-proof .contact-card h4 i {
+  color: #25D366; /* WhatsApp green */
+  font-size: 24px;
+}
+
+.social-proof .contact-card p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.social-proof .contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-proof .contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.social-proof .contact-details li i {
+  color: var(--accent-color);
+}
+
+.social-proof .btn-primary {
+  background-color: #25D366; /* WhatsApp green */
+  border-color: #25D366;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+}
+
+.social-proof .btn-primary:hover {
+  background-color: #20bd5a;
+  border-color: #20bd5a;
+}
