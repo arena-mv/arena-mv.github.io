@@ -26,6 +26,39 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/custom-sections.css" rel="stylesheet">
+  <style>
+    /* Hero video background */
+    .hero { position: relative; overflow: hidden; }
+    .hero .video-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero .video-bg video { width: 100%; height: 100%; object-fit: cover; }
+    .hero .video-bg .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.60); }
+    .hero .container { position: relative; z-index: 1; }
+
+    /* Trust section background image */
+    #trust { position: relative; overflow: hidden; background: transparent !important; }
+    #trust .bg-image { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
+    #trust .bg-image .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.40); }
+    #trust .container { position: relative; z-index: 1; }
+    /* Trust section text colors for contrast */
+    #trust .section-title h2,
+    #trust .section-title span,
+    #trust .section-title .description-title { color: #ffffff; }
+    #trust .trust-badges .badge-content h4 { color: #ffffff; }
+    #trust .trust-badges .badge-content p { color: #e5e7eb; }
+    #trust .badge-icon { color: #ffffff; background: rgba(255,255,255,0.10); border-radius: 9999px; padding: 8px; display: inline-flex; align-items: center; justify-content: center; }
+    /* Brand chips inside the white card: ensure sufficient contrast */
+    .brands-grid .brand-item { color: #1f2937; border: 1px solid #e5e7eb; background: #ffffff; }
+
+    /* Social Proof section background video */
+    #social-proof { position: relative; overflow: hidden; background: transparent !important; }
+    #social-proof .video-bg { position: absolute; inset: 0; z-index: 0; }
+    #social-proof .video-bg video { width: 100%; height: 100%; object-fit: cover; }
+    #social-proof .video-bg .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.60); }
+    #social-proof .container { position: relative; z-index: 1; }
+    #social-proof .section-title h2,
+    #social-proof .section-title span,
+    #social-proof .section-title .description-title { color: #ffffff; }
+  </style>
 </head>
 
 <body class="index-page">
@@ -62,7 +95,12 @@
 
     <!-- Dive Hero Section -->
     <section id="hero" class="hero section dark-background">
-
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="assets/img/1711101978361657.MP4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
       <div class="container">
 
         <div class="row align-items-center">
@@ -115,11 +153,57 @@
                       <option value="instructor">Instructor Level</option>
                     </select>
                   </div>
+                  <div class="col-md-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="add-accommodation">
+                      <label class="form-check-label" for="add-accommodation">Add Hotel Enquiry</label>
+                    </div>
+                  </div>
+                  <div id="accommodation-fields" class="col-12 mt-2 d-none">
+                    <div class="row gy-3">
+                      <div class="col-md-6">
+                        <label for="check-in-date">Hotel Check-in</label>
+                        <input type="date" id="check-in-date" name="check_in_date" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="check-out-date">Hotel Check-out</label>
+                        <input type="date" id="check-out-date" name="check_out_date" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="guests-count">Guests</label>
+                        <select id="guests-count" name="guests_count" class="form-control">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4+</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="room-type">Room Type</label>
+                        <input type="text" id="room-type" name="room_type" class="form-control" placeholder="Deluxe Sea View">
+                      </div>
+                      <div class="col-12">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" name="special_requests" class="form-control" rows="2" placeholder="High floor, late check-in"></textarea>
+                      </div>
+                    </div>
+                  </div>
                   <div class="col-md-12 text-center">
                     <button type="submit" class="btn btn-accent w-100 mt-3">Find My Perfect Dive</button>
                   </div>
                 </div>
               </form>
+              <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                  const checkbox = document.getElementById('add-accommodation');
+                  const fields = document.getElementById('accommodation-fields');
+                  if (checkbox && fields) {
+                    checkbox.addEventListener('change', function() {
+                      fields.classList.toggle('d-none', !checkbox.checked);
+                    });
+                  }
+                });
+              </script>
             </div>
           </div>
         </div>
@@ -184,7 +268,7 @@
             <div class="package-card">
               <div class="package-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/discovery-scuba/G0076575.JPG" alt="Discover Scuba Diving" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="package-overlay">
                   <div class="badge featured">Best Seller</div>
@@ -211,7 +295,7 @@
             <div class="package-card">
               <div class="package-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/arena-dive-boat/IMG_3535.JPG" alt="Two Tank Dive" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="package-overlay">
                   <div class="badge">Popular</div>
@@ -238,7 +322,7 @@
             <div class="package-card">
               <div class="package-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0712304.JPG" alt="PADI Open Water Course" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="package-overlay">
                   <div class="badge">Value</div>
@@ -280,7 +364,7 @@
             <div class="site-card">
               <div class="site-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0682218.JPG" alt="Banana Reef" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="site-overlay">
                   <div class="badge">Reef</div>
@@ -301,7 +385,7 @@
             <div class="site-card">
               <div class="site-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0572001.JPG" alt="Maldive Victory" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="site-overlay">
                   <div class="badge">Wreck</div>
@@ -322,7 +406,7 @@
             <div class="site-card">
               <div class="site-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0672181.JPG" alt="Kuda Giri" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="site-overlay">
                   <div class="badge">Channel</div>
@@ -343,7 +427,7 @@
             <div class="site-card">
               <div class="site-image">
                 <div class="placeholder-image">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0712303.JPG" alt="Fish Head" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="site-overlay">
                   <div class="badge featured">Popular</div>
@@ -366,6 +450,9 @@
 
     <!-- Trust Indicators Section -->
     <section id="trust" class="trust section light-background">
+      <div class="bg-image" style="background-image: url('assets/img/arena-dive-boat/IMG_3527.JPG');">
+        <div class="overlay"></div>
+      </div>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
@@ -439,7 +526,7 @@
             <div class="swiper-slide">
               <div class="gallery-item">
                 <div class="placeholder-image gallery-img">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0682212.JPG" alt="Manta Ray at Hanifaru Bay" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="gallery-caption">
                   <h4>Manta Ray at Hanifaru Bay</h4>
@@ -451,7 +538,7 @@
             <div class="swiper-slide">
               <div class="gallery-item">
                 <div class="placeholder-image gallery-img">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0682215.JPG" alt="Coral Garden at Fish Head" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="gallery-caption">
                   <h4>Coral Garden at Fish Head</h4>
@@ -463,7 +550,7 @@
             <div class="swiper-slide">
               <div class="gallery-item">
                 <div class="placeholder-image gallery-img">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/mo/G0712298.JPG" alt="Whale Shark Encounter" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="gallery-caption">
                   <h4>Whale Shark Encounter</h4>
@@ -475,7 +562,7 @@
             <div class="swiper-slide">
               <div class="gallery-item">
                 <div class="placeholder-image gallery-img">
-                  <i class="bi bi-image"></i>
+                  <img src="assets/img/arena-dive-boat/IMG_3536.JPG" alt="Night Dive Adventure" style="width:100%;height:100%;object-fit:cover;">
                 </div>
                 <div class="gallery-caption">
                   <h4>Night Dive Adventure</h4>
@@ -526,6 +613,12 @@
 
     <!-- Social Proof Section -->
     <section id="social-proof" class="social-proof section light-background">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="assets/img/discovery-scuba/GX014510.MP4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+      </div>
       <div class="container">
         <!-- Section Title -->
         <div class="section-title">
