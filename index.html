@@ -21,43 +21,194 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/custom-sections.css" rel="stylesheet">
   <style>
-    /* Hero video background */
-    .hero { position: relative; overflow: hidden; }
-    .hero .video-bg { position: absolute; inset: 0; z-index: 0; }
-    .hero .video-bg video { width: 100%; height: 100%; object-fit: cover; }
-    .hero .video-bg .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.60); }
-    .hero .container { position: relative; z-index: 1; }
-
-    /* Trust section background image */
-    #trust { position: relative; overflow: hidden; background: transparent !important; }
-    #trust .bg-image { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
-    #trust .bg-image .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.40); }
-    #trust .container { position: relative; z-index: 1; }
-    /* Trust section text colors for contrast */
-    #trust .section-title h2,
-    #trust .section-title span,
-    #trust .section-title .description-title { color: #ffffff; }
-    #trust .trust-badges .badge-content h4 { color: #ffffff; }
-    #trust .trust-badges .badge-content p { color: #e5e7eb; }
-    #trust .badge-icon { color: #ffffff; background: rgba(255,255,255,0.10); border-radius: 9999px; padding: 8px; display: inline-flex; align-items: center; justify-content: center; }
-    /* Brand chips inside the white card: ensure sufficient contrast */
-    .brands-grid .brand-item { color: #1f2937; border: 1px solid #e5e7eb; background: #ffffff; }
-
-    /* Social Proof section background video */
-    #social-proof { position: relative; overflow: hidden; background: transparent !important; }
-    #social-proof .video-bg { position: absolute; inset: 0; z-index: 0; }
-    #social-proof .video-bg video { width: 100%; height: 100%; object-fit: cover; }
-    #social-proof .video-bg .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.60); }
-    #social-proof .container { position: relative; z-index: 1; }
+    /* Dark Theme Color Variables */
+    :root {
+      --background-color: #1e2630; /* Dark background color for the entire website */
+      --default-color: #e5e7eb; /* Default color for text content */
+      --heading-color: #ffffff; /* Color for headings */
+      --accent-color: #047bf8; /* Accent color for buttons, links, etc. */
+      --surface-color: #334152; /* Background for cards and boxed elements */
+      --contrast-color: #ffffff; /* Text color for contrast against dark backgrounds */
+    }
+    
+    /* Override light theme classes */
+    .light-background {
+      --background-color: #273240;
+      --surface-color: #334152;
+    }
+    
+    .dark-background {
+      --background-color: #1a212b;
+      --default-color: #ffffff;
+      --heading-color: #ffffff;
+      --surface-color: #273240;
+    }
+    
+    /* Apply dark theme to body */
+    body {
+      background-color: var(--background-color);
+      color: var(--default-color);
+    }
+    
+    /* Brand chips inside the card: ensure sufficient contrast for dark theme */
+    .brands-grid .brand-item { color: #e5e7eb; border: 1px solid #455468; background: #273240; }
+    
+    .popular-packages .package-overlay .badge.featured {
+      background-color: var(--accent-color);
+    }
+    .dive-sites .site-overlay .badge.featured {
+      background-color: var(--accent-color);
+    }
+    
+    /* Update button styles */
+    .btn-primary, .btn-accent, .btn-getstarted {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 15px rgba(4, 123, 248, 0.2);
+    }
+    
+    .package-card, .site-card, .review-card {
+      background-color: var(--surface-color);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Video backgrounds */
+    .hero, #social-proof { position: relative; overflow: hidden; background: transparent !important; }
+    .hero .video-bg, #social-proof .video-bg { position: absolute; inset: 0; z-index: 0; }
+    .hero .video-bg video, #social-proof .video-bg video { width: 100%; height: 100%; object-fit: cover; }
+    .hero .video-bg .overlay, #social-proof .video-bg .overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.75); }
+    .hero .container, #social-proof .container { position: relative; z-index: 1; }
+    
+    .btn-outline-light {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+    
+    .btn-outline-light:hover {
+      background-color: rgba(4, 123, 248, 0.1);
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+    
     #social-proof .section-title h2,
     #social-proof .section-title span,
     #social-proof .section-title .description-title { color: #ffffff; }
+    
+    /* Enhanced review cards for dark theme */
+    #social-proof .review-card {
+      background-color: rgba(51, 65, 82, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(4, 123, 248, 0.2);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    #social-proof .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(4, 123, 248, 0.15);
+      border: 1px solid rgba(4, 123, 248, 0.3);
+    }
+    
+    #social-proof .reviewer-img {
+      background-color: rgba(4, 123, 248, 0.1);
+      border: 2px solid rgba(4, 123, 248, 0.3);
+    }
+    
+    #social-proof .reviewer-img i {
+      color: var(--accent-color);
+    }
+    
+    #social-proof .review-content p {
+      color: #e5e7eb;
+    }
+    
+    #social-proof .package-card {
+      background-color: rgba(51, 65, 82, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(4, 123, 248, 0.2);
+    }
+    
+    /* Social icons in social proof section */
+    #social-proof .social-icon {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    
+    #social-proof .social-icon:hover {
+      transform: translateY(-3px);
+      background-color: #0366d6;
+      box-shadow: 0 5px 15px rgba(4, 123, 248, 0.3);
+    }
+    
+    /* WhatsApp button styling */
+    .whatsapp-btn {
+      background-color: #25D366;
+      border-color: #25D366;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+    }
+    
+    .whatsapp-btn:hover {
+      background-color: #1fba58;
+      border-color: #1fba58;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+    /* Trust section background image */
+    #trust { position: relative; overflow: hidden; background: transparent !important; }
+    #trust .bg-image { position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center; }
+    #trust .bg-image .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.75); }
+    #trust .container { position: relative; z-index: 1; }
+    
+    /* Section title colors */
+    .section-title h2 {
+      color: #a3b1c2;
+    }
+    
+    .section-title h2::after {
+      background: var(--accent-color);
+    }
+    
+    .section-title div, .section-title .description-title {
+      color: var(--heading-color);
+    }
+    
+    /* Accent color elements */
+    .feature-tag i, .badge-icon i, .contact-details li i, .footer-links ul a i, .social-icon {
+      color: var(--accent-color);
+    }
+    
+    .social-icon, .footer .social-links a:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+    }
+    
+    .stars i {
+      color: var(--accent-color);
+    }
+    
+    /* Form elements */
+    input, select, textarea {
+      background-color: #273240 !important;
+      border-color: #455468 !important;
+      color: var(--default-color) !important;
+    }
+    
+    /* Placeholder text */
+    ::placeholder {
+      color: #8596ab !important;
+      opacity: 1;
+    }
   </style>
 </head>
 
@@ -73,15 +224,21 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#conditions">Conditions</a></li>
-          <li><a href="#popular-packages">Popular Packages</a></li>
-          <li><a href="#dive-sites">Dive Sites</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#excursions">Excursions</a></li>
-          <li><a href="#equipment">Equipment</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#social-proof">Reviews</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="dropdown"><a href="#"><span>Dive With Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="experience-dive.html">Experience Dives</a></li>
+              <li><a href="fun-dives.html">Fun Dives</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="dive-sites.html">Dive Sites</a></li>
+            </ul>
+          </li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="calendar.html">Calendar &amp; Booking</a></li>
+          <li><a href="safety.html">Safety &amp; Standards</a></li>
+          <li><a href="team.html">About the Team</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -97,7 +254,7 @@
     <section id="hero" class="hero section dark-background">
       <div class="video-bg">
         <video autoplay muted loop playsinline>
-          <source src="assets/img/1711101978361657.MP4" type="video/mp4">
+          <source src="assets/img/1711101978361657-compressed.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
       </div>
@@ -213,7 +370,7 @@
     </section><!-- /Dive Hero Section -->
 
     <!-- Today's Conditions Section -->
-    <section id="conditions" class="conditions section">
+    <section id="conditions" class="conditions section dark-background">
       <!-- Section Title -->
       <div class="container section-title">
         <h2>Today's Conditions</h2>
@@ -254,7 +411,7 @@
     </section><!-- /Today's Conditions Section -->
 
     <!-- Popular Packages Section -->
-    <section id="popular-packages" class="popular-packages section light-background">
+    <section id="popular-packages" class="popular-packages section">
       <!-- Section Title -->
       <div class="container section-title">
         <h2>Popular Packages</h2>
@@ -350,7 +507,7 @@
     </section><!-- /Popular Packages Section -->
 
     <!-- Dive Sites Section -->
-    <section id="dive-sites" class="dive-sites section">
+    <section id="dive-sites" class="dive-sites section dark-background">
       <!-- Section Title -->
       <div class="container section-title">
         <h2>Dive Sites</h2>
@@ -449,7 +606,7 @@
     </section><!-- /Dive Sites Section -->
 
     <!-- Trust Indicators Section -->
-    <section id="trust" class="trust section light-background">
+    <section id="trust" class="trust section">
       <div class="bg-image" style="background-image: url('assets/img/arena-dive-boat/IMG_3527.JPG');">
         <div class="overlay"></div>
       </div>
@@ -510,7 +667,7 @@
     </section><!-- /Trust Indicators Section -->
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
+    <section id="gallery" class="gallery section dark-background">
 
       <!-- Section Title -->
       <div class="container section-title">
@@ -612,10 +769,10 @@
     </section><!-- /Gallery Section -->
 
     <!-- Social Proof Section -->
-    <section id="social-proof" class="social-proof section light-background">
+    <section id="social-proof" class="social-proof section">
       <div class="video-bg">
         <video autoplay muted loop playsinline>
-          <source src="assets/img/discovery-scuba/GX014510.MP4" type="video/mp4">
+          <source src="assets/img/discovery-scuba/GX014510-compressed.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
       </div>
@@ -818,7 +975,7 @@
                     </ul>
                   </div>
                   <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
-                    <a href="https://wa.me/9601234567" class="btn btn-primary"><i class="bi bi-whatsapp"></i> Message Us</a>
+                    <a href="https://wa.me/9601234567" class="btn btn-primary whatsapp-btn"><i class="bi bi-whatsapp"></i> Message Us</a>
                   </div>
                 </div>
               </div>
@@ -831,6 +988,28 @@
   </main>
 
   <footer id="footer" class="footer position-relative dark-background">
+    <style>
+      /* Footer dark theme styles */
+      .footer {
+        --background-color: #1a212b;
+        --surface-color: #273240;
+        border-top: 1px solid #334152;
+      }
+      
+      .footer .footer-bottom {
+        background-color: rgba(26, 33, 43, 0.5);
+        border-top: 1px solid #334152;
+      }
+      
+      .footer .contact-item .contact-icon {
+        background-color: rgba(4, 123, 248, 0.15);
+      }
+      
+      .footer .social-links a {
+        background-color: #273240;
+        color: #8596ab;
+      }
+    </style>
 
     <div class="container">
       <div class="row gy-5">
