@@ -275,7 +275,7 @@
             <div class="booking-form">
               <form action="" method="post">
                 <div class="row gy-3">
-                  <div class="col-md-12">
+                  <div class="col-md-5">
                     <label for="course-type">Course Type</label>
                     <select name="course-type" id="course-type" class="form-control" required="">
                       <option value="">Select a course...</option>
@@ -284,6 +284,22 @@
                       <option value="rescue">PADI Rescue Diver</option>
                       <option value="divemaster">PADI Divemaster</option>
                       <option value="excursion">Dive Excursion</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 d-flex align-items-center justify-content-center pt-4">
+                    <h5>or</h5>
+                  </div>
+                  <div class="col-md-5">
+                    <label for="course-type">Package Type</label>
+                    <select name="course-type" id="course-type" class="form-control" required="">
+                      <option value="">Select a package...</option>
+                      <option value="room-dive">Room + Dive</option>
+                      <option value="snorkel-dive">Snorkel + Dive</option>
+                      <option value="beginner-package">Beginner Package</option>
+                      <option value="intermediate-package">Intermediate Package</option>
+                      <option value="advanced-package">Advanced Package</option>
+                      <option value="family-package">Family Package</option>
+                      <option value="multi-day-package">Multi-day Package</option>
                     </select>
                   </div>
                   <div class="col-md-6">
@@ -301,7 +317,7 @@
                     </select>
                   </div>
                   <div class="col-md-12">
-                    <label for="experience">Experience Level</label>
+                    <label for="experience">Average Experience Level of Divers</label>
                     <select name="experience" id="experience" class="form-control" required="">
                       <option value="">Select experience level...</option>
                       <option value="beginner">Beginner - No experience</option>
@@ -337,7 +353,15 @@
                       </div>
                       <div class="col-md-6">
                         <label for="room-type">Room Type</label>
-                        <input type="text" id="room-type" name="room_type" class="form-control" placeholder="Deluxe Sea View">
+                        <select name="room-type" id="room-type" class="form-control" required="">
+                          <option value="standard-room">Standard Room</option>
+                          <option value="standard-deluxe-room-with-balcony">Standard Deluxe Room with Balcony</option>
+                          <option value="deluxe-double-room-with-balcony-island-view">Deluxe Double Room with Balcony & Island View</option>
+                          <option value="super-deluxe-room-with-balcony-island-view">Super Deluxe Room with Balcony & Island View</option>
+                          <option value="deluxe-double-room-with-balcony-and-sea-view">Deluxe Double Room with Balcony and Sea View</option>
+                          <option value="premium-double-room-with-balcony-and-sea-view">Premium Double Room with Balcony and Sea View</option>
+                          <option value="premium-super-deluxe-room-with-balcony-sea-view">Premium Super Deluxe Room with Balcony & Sea View</option>
+                        </select>
                       </div>
                       <div class="col-12">
                         <label for="special-requests">Special Requests</label>
